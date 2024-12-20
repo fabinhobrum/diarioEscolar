@@ -100,4 +100,5 @@ btn_buscar.pack(fill="x", pady=5)
 btn_sair = tk.Button(frame, text="Sair", command=sair)
 btn_sair.pack(fill="x", pady=5)
 
-root.mainloop()
+root.mainloop() 
+## customizando
