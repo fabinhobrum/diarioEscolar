@@ -101,4 +101,5 @@ btn_sair = tk.Button(frame, text="Sair", command=sair)
 btn_sair.pack(fill="x", pady=5)
 
 root.mainloop() 
+
 ## customizando
