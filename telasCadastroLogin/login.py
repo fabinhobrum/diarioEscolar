@@ -19,6 +19,11 @@ def mostrar_tela_login(callback_sucesso):
             callback_sucesso()
         else:
             messagebox.showerror("Login", "Usuário ou senha inválidos.")
+    
+    def sair():
+        """Fecha a janela principal"""
+        root.quit()
+        root.destroy()
 
 
     # Função para dar animação ao botao
@@ -50,17 +55,23 @@ def mostrar_tela_login(callback_sucesso):
     frame_senha.place(x=159, y=140)  # Posições do frame de senha
 
     # Botão de login
-    botao_login = tk.Button(root, text="Login", command=verificar_login, width=15, font=fonte_padrao(14))
-    botao_login.place(x=250, y=200)
+    botao_login = tk.Button(root, text="Login", command=verificar_login, width=10, font=fonte_padrao(14))
+    botao_login.place(x=220, y=200)
+
+    # Botao sair/fechar a tela
+    botao_sair = tk.Button(root, text="Sair", command=sair, width=10, font=fonte_padrao(14))
+    botao_sair.place(x=400, y=200)
 
     # Bind de evento movimento para o botao
     botao_login.bind("<Enter>", lambda event, button=botao_login: on_enter(event, button))
     botao_login.bind("<Leave>", lambda event, button=botao_login: on_leave(event, button))
+    botao_sair.bind("<Enter>", lambda event, button=botao_sair: on_enter(event, button))
+    botao_sair.bind("<Leave>", lambda event, button=botao_sair: on_leave(event, button))
     
-
+ 
 
     root.mainloop()
-
+    root.destroy()
 
 
 # Função para testar
